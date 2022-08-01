@@ -4,8 +4,8 @@ var gravity = -30
 var max_speed = 6
 
 var mouse_sensitivity = 15
-var min_look_angle = -20
-var max_look_angle = 75
+var min_look_angle = -30
+var max_look_angle = 20
 var mouse_delta = Vector2()
 onready var pivot = get_node("Pivot")
 
@@ -47,9 +47,9 @@ func _process(delta):
 	var rot = Vector3(mouse_delta.y, mouse_delta.x, 0) * mouse_sensitivity * delta
 	
 	pivot.rotation_degrees.x += rot.x
-	print(pivot.rotation_degrees.x)
-	print(new_clamp(rotation_degrees.x, min_look_angle, max_look_angle))
-	pivot.rotation_degrees.x = new_clamp(rotation_degrees.x, min_look_angle, max_look_angle)
+	#print(pivot.rotation_degrees.x)
+	#print(new_clamp(rotation_degrees.x, min_look_angle, max_look_angle))
+	pivot.rotation_degrees.x = clamp(pivot.rotation_degrees.x, min_look_angle, max_look_angle)
 
 	
 	pivot.rotation_degrees.y += rot.y
@@ -72,14 +72,3 @@ func _physics_process(delta):
 		if time_from_on_floor <= coyote_time:
 			velocity.y = jump
 	velocity = move_and_slide(velocity, Vector3.UP, true)
-
-func new_clamp(value, min_val, max_val):
-	if value <= min_val:
-		print('Min-Val')
-		return min_val
-	elif value >= max_val:
-		print('Max-Val')
-		return max_val
-	else:
-		print('OG Val')
-		return value
