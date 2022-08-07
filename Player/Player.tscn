@@ -421,7 +421,6 @@ tracks/18/keys = PoolRealArray( 0, 1, -1.09077e-09, -9.23698e-08, -1.585e-08, 0.
 [sub_resource type="Animation" id=10]
 resource_name = "Run"
 length = 1.25
-loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath(".:Root")
 tracks/0/interp = 1
@@ -709,17 +708,6 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Pivot" type="Spatial" parent="."]
-transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.000256178, 1.1808, 0.000238862 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Camera" type="Camera" parent="Pivot"]
-transform = Transform( 1.11111, 2.45563e-09, -4.32192e-09, 3.87992e-11, 1.11111, 2.56114e-09, -7.27596e-11, 5.82077e-11, 1.11111, 0.00454966, -0.00821829, 5.91549 )
-current = true
-near = 1.0
-
 [node name="Armature" type="Skeleton" parent="."]
 transform = Transform( -1.5, -1.04617e-10, -1.31186e-07, -3.76232e-11, 1.5, 5.82077e-11, 1.31127e-07, 5.82077e-11, -1.5, 7.55058e-11, -1.5, -5.82077e-11 )
 bones/0/name = "Root"
@@ -819,7 +807,6 @@ bones/18/enabled = true
 bones/18/bound_children = [  ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Armature"]
-autoplay = "Run"
 anims/0TPose = SubResource( 7 )
 anims/ArmatureAction = SubResource( 8 )
 anims/Idle = SubResource( 9 )
@@ -827,4 +814,14 @@ anims/Run = SubResource( 10 )
 
 [node name="Cube" type="MeshInstance" parent="Armature"]
 mesh = SubResource( 11 )
-material/0 = null
+
+[node name="Pivot" type="Spatial" parent="."]
+transform = Transform( 0.999999, 2.60171e-10, 1.30967e-10, -2.50234e-10, 0.999999, 2.18279e-10, -1.30967e-10, -2.03727e-10, 0.999999, -0.000256178, 1.1808, 0.000238862 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera" type="Camera" parent="Pivot"]
+transform = Transform( 1.11111, 2.45563e-09, -4.32192e-09, 3.87992e-11, 1.11111, 2.56114e-09, -7.27596e-11, 5.82077e-11, 1.11111, 0.00454966, -0.00821829, 5.91549 )
+current = true
+near = 1.0

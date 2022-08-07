@@ -3,7 +3,7 @@ extends KinematicBody
 var gravity = -30
 var max_speed = 6
 
-var mouse_sensitivity = 15
+var mouse_sensitivity = 20
 var min_look_angle = -30
 var max_look_angle = 20
 var mouse_delta = Vector2()
@@ -15,29 +15,40 @@ var time_from_on_floor : float
 var coyote_time = 0.25
 
 var jump = 10
+var rotate = 1 #deg per frame
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_input():
 	var input_dir = Vector3()
-	# desired move in camera direction
+	var camera_transform = $Pivot/Camera.get_global_transform()
+	
+	# more relitive to camera
 	if Input.is_action_pressed("forward"):
-		input_dir += -global_transform.basis.z
+		input_dir += -camera_transform.basis.z
 	if Input.is_action_pressed("backward"):
-		input_dir += global_transform.basis.z
+		input_dir += camera_transform.basis.z
 	if Input.is_action_pressed("left"):
-		input_dir += -global_transform.basis.x
+		input_dir += -camera_transform.basis.x
 	if Input.is_action_pressed("right"):
-		input_dir += global_transform.basis.x
+		input_dir += camera_transform.basis.x
+	
+	#normalise to limit speeed to 1
 	input_dir = input_dir.normalized()
+	
+	if input_dir.length() > 0.2:
+		#Point towards the direction they are moving
+		var look_direction = Vector2(input_dir.z, input_dir.x)
+		$Armature.rotation.y = look_direction.angle()
+		
+		#Play walk animation if the player are walking
+		$Armature/AnimationPlayer.play("Run")
+	else:
+		#Play the idle animation if the player isn't moving
+		$Armature/AnimationPlayer.play("Idle")
+	
 	return input_dir
-
-#func _unhandled_input(event):
-#	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-#		rotate_y(-event.relative.x * mouse_sensitivity)
-#		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-#		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.is_action_pressed("rclick"):
@@ -47,10 +58,7 @@ func _process(delta):
 	var rot = Vector3(mouse_delta.y, mouse_delta.x, 0) * mouse_sensitivity * delta
 	
 	pivot.rotation_degrees.x += rot.x
-	#print(pivot.rotation_degrees.x)
-	#print(new_clamp(rotation_degrees.x, min_look_angle, max_look_angle))
 	pivot.rotation_degrees.x = clamp(pivot.rotation_degrees.x, min_look_angle, max_look_angle)
-
 	
 	pivot.rotation_degrees.y += rot.y
 	
