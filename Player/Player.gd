@@ -79,4 +79,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if time_from_on_floor <= coyote_time:
 			velocity.y = jump
+	
 	velocity = move_and_slide(velocity, Vector3.UP, true)
