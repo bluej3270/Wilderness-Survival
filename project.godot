@@ -49,15 +49,75 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/beehave/nodes/leaves/condition.gd"
 }, {
+"base": "Reference",
+"class": "CtrlInventory",
+"language": "GDScript",
+"path": "res://addons/gloot/ctrl_inventory.gd"
+}, {
+"base": "Reference",
+"class": "CtrlInventoryGrid",
+"language": "GDScript",
+"path": "res://addons/gloot/ctrl_inventory_grid.gd"
+}, {
+"base": "Reference",
+"class": "CtrlInventoryItemRect",
+"language": "GDScript",
+"path": "res://addons/gloot/ctrl_inventory_item_rect.gd"
+}, {
+"base": "Reference",
+"class": "CtrlInventoryStacked",
+"language": "GDScript",
+"path": "res://addons/gloot/ctrl_inventory_stacked.gd"
+}, {
+"base": "Reference",
+"class": "CtrlItemSlot",
+"language": "GDScript",
+"path": "res://addons/gloot/ctrl_item_slot.gd"
+}, {
 "base": "BeehaveNode",
 "class": "Decorator",
 "language": "GDScript",
 "path": "res://addons/beehave/nodes/decorators/decorator.gd"
 }, {
+"base": "Reference",
+"class": "GlootVerify",
+"language": "GDScript",
+"path": "res://addons/gloot/verify.gd"
+}, {
+"base": "Node",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://addons/gloot/inventory.gd"
+}, {
+"base": "Inventory",
+"class": "InventoryGrid",
+"language": "GDScript",
+"path": "res://addons/gloot/inventory_grid.gd"
+}, {
+"base": "Node",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://addons/gloot/inventory_item.gd"
+}, {
+"base": "Inventory",
+"class": "InventoryStacked",
+"language": "GDScript",
+"path": "res://addons/gloot/inventory_stacked.gd"
+}, {
 "base": "Decorator",
 "class": "InverterDecorator",
 "language": "GDScript",
 "path": "res://addons/beehave/nodes/decorators/inverter.gd"
+}, {
+"base": "Reference",
+"class": "ItemProtoset",
+"language": "GDScript",
+"path": "res://addons/gloot/item_protoset.gd"
+}, {
+"base": "Node",
+"class": "ItemSlot",
+"language": "GDScript",
+"path": "res://addons/gloot/item_slot.gd"
 }, {
 "base": "BeehaveNode",
 "class": "Leaf",
@@ -98,8 +158,20 @@ _global_script_class_icons={
 "BeehaveTree": "",
 "Composite": "res://addons/beehave/icons/category_composite.svg",
 "ConditionLeaf": "res://addons/beehave/icons/condition.svg",
+"CtrlInventory": "",
+"CtrlInventoryGrid": "",
+"CtrlInventoryItemRect": "",
+"CtrlInventoryStacked": "",
+"CtrlItemSlot": "",
 "Decorator": "res://addons/beehave/icons/category_decorator.svg",
+"GlootVerify": "",
+"Inventory": "",
+"InventoryGrid": "",
+"InventoryItem": "",
+"InventoryStacked": "",
 "InverterDecorator": "res://addons/beehave/icons/inverter.svg",
+"ItemProtoset": "",
+"ItemSlot": "",
 "Leaf": "res://addons/beehave/icons/action.svg",
 "LimiterDecorator": "res://addons/beehave/icons/limiter.svg",
 "SelectorComposite": "res://addons/beehave/icons/selector.svg",
@@ -129,7 +201,7 @@ window/stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/beehave/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/beehave/plugin.cfg", "res://addons/gloot/plugin.cfg" )
 
 [input]
 

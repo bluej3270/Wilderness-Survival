@@ -11,5 +11,3 @@ func set_hunger(v):
 
 func set_temperature(v):
 	$"HUD/VBoxContainer/Top/HBoxContainer/Temperature/HBoxContainer/Temp".text = str(v)
-
-#TODO: set hotbar function
