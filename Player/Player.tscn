@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Exported/ColorPalette.png" type="Texture" id=2]
+[ext_resource path="res://UI/Main UI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -825,3 +826,5 @@ __meta__ = {
 transform = Transform( 1.11111, 2.45563e-09, -4.32192e-09, 3.87992e-11, 1.11111, 2.56114e-09, -7.27596e-11, 5.82077e-11, 1.11111, 0.00454966, -0.00821829, 5.91549 )
 current = true
 near = 1.0
+
+[node name="Main UI" parent="Pivot/Camera" instance=ExtResource( 3 )]
