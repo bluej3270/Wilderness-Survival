@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Exported/ColorPalette.png" type="Texture" id=2]
 [ext_resource path="res://UI/Main UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Items/Fancy Axe.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -815,6 +816,14 @@ anims/Run = SubResource( 10 )
 
 [node name="Cube" type="MeshInstance" parent="Armature"]
 mesh = SubResource( 11 )
+material/0 = null
+
+[node name="BoneAttachment" type="BoneAttachment" parent="Armature"]
+transform = Transform( 0.0243834, -3.35276e-08, 0.999702, 0.999702, -1.38883e-07, -0.024383, 1.41561e-07, 0.999999, -5.96046e-08, -0.884214, 1.50645, 4.84288e-08 )
+bone_name = "Hand.R"
+
+[node name="Fancy Axe" parent="Armature/BoneAttachment" instance=ExtResource( 4 )]
+transform = Transform( -0.0660654, 0.0082485, -0.00342974, 0.00316897, -0.00229092, -0.0665519, -0.00835215, -0.0661147, 0.00187814, 0, 1.52068e-08, 5.96046e-08 )
 
 [node name="Pivot" type="Spatial" parent="."]
 transform = Transform( 0.999999, 2.60171e-10, 1.30967e-10, -2.50234e-10, 0.999999, 2.18279e-10, -1.30967e-10, -2.03727e-10, 0.999999, -0.000256178, 1.1808, 0.000238862 )

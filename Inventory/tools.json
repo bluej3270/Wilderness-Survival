@@ -3,6 +3,8 @@
         "id": "axe",
         "width": 1,
         "height": 1,
-        "image": "res://Inventory/Icons/can_of_beans.png"
+        "image": "res://Inventory/Icons/can_of_beans.png",
+		"path": "res://Items/Fancy Axe.tscn",
+        "properties": [100, 20]
     }
 ]

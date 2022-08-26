@@ -1,7 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=3 format=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.380392, 0.380392, 0.380392, 0.380392 )
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.380392, 0.380392, 0.380392, 0.380392 )
+
 [resource]
 Panel/styles/panel = SubResource( 1 )
+TabContainer/styles/panel = SubResource( 2 )
