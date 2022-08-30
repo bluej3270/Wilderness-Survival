@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Exported/world.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://World/Objects/Tree1.tscn" type="PackedScene" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://World/Objects/Rock3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Exported/rock3.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
-[ext_resource path="res://World/Multi-Mesh.gd" type="Script" id=15]
+[ext_resource path="res://World/Multi-Mesh-Tree.gd" type="Script" id=15]
+[ext_resource path="res://World/Multi-Mesh-Rock.gd" type="Script" id=16]
 
 [sub_resource type="MultiMesh" id=2]
 transform_format = 1
@@ -87,19 +88,18 @@ script = ExtResource( 15 )
 [node name="Rock1s" type="MultiMeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.351562, 0, -0.0314026 )
 multimesh = SubResource( 3 )
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Rock2s" type="MultiMeshInstance" parent="."]
 multimesh = SubResource( 4 )
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Rock3s" type="MultiMeshInstance" parent="."]
 multimesh = SubResource( 5 )
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
-material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }
@@ -112,7 +112,6 @@ shape = SubResource( 6 )
 
 [node name="River" type="MeshInstance" parent="."]
 mesh = ExtResource( 4 )
-material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }
@@ -125,7 +124,6 @@ shape = SubResource( 7 )
 
 [node name="Mountains" type="MeshInstance" parent="."]
 mesh = ExtResource( 5 )
-material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }

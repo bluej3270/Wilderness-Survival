@@ -17,6 +17,7 @@ var coyote_time = 0.25
 var jump = 10
 var rotate = 1 #deg per frame
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -81,3 +82,9 @@ func _physics_process(delta):
 			velocity.y = jump
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+
+func get_raycast():
+	return $RayCast
+
+func get_righthand_bone():
+	return $Armature/rightHand

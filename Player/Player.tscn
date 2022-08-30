@@ -816,14 +816,13 @@ anims/Run = SubResource( 10 )
 
 [node name="Cube" type="MeshInstance" parent="Armature"]
 mesh = SubResource( 11 )
-material/0 = null
 
-[node name="BoneAttachment" type="BoneAttachment" parent="Armature"]
+[node name="rightHand" type="BoneAttachment" parent="Armature"]
 transform = Transform( 0.0243834, -3.35276e-08, 0.999702, 0.999702, -1.38883e-07, -0.024383, 1.41561e-07, 0.999999, -5.96046e-08, -0.884214, 1.50645, 4.84288e-08 )
 bone_name = "Hand.R"
 
-[node name="Fancy Axe" parent="Armature/BoneAttachment" instance=ExtResource( 4 )]
-transform = Transform( -0.0660654, 0.0082485, -0.00342974, 0.00316897, -0.00229092, -0.0665519, -0.00835215, -0.0661147, 0.00187814, 0, 1.52068e-08, 5.96046e-08 )
+[node name="Fancy Axe" parent="Armature/rightHand" instance=ExtResource( 4 )]
+transform = Transform( -0.0660654, 0.0082485, -0.00342974, 0.00316897, -0.00229092, -0.0665519, -0.00835215, -0.0661147, 0.00187814, 1.57654e-05, 0.0761939, -9.89437e-06 )
 
 [node name="Pivot" type="Spatial" parent="."]
 transform = Transform( 0.999999, 2.60171e-10, 1.30967e-10, -2.50234e-10, 0.999999, 2.18279e-10, -1.30967e-10, -2.03727e-10, 0.999999, -0.000256178, 1.1808, 0.000238862 )
@@ -837,3 +836,8 @@ current = true
 near = 1.0
 
 [node name="Main UI" parent="Pivot/Camera" instance=ExtResource( 3 )]
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 5.64402e-11, 0, -3.19549e-11, 1, 0, 0, 2.91038e-11, 1, -0.000175036, 0.778358, 0.000163205 )
+enabled = true
+cast_to = Vector3( 0, 0, -25 )

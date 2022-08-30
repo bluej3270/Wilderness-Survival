@@ -6,6 +6,7 @@ func _ready():
 	for index in multimesh.instance_count:
 		var collision_shape = CollisionShape.new()
 		var mesh_tran = multimesh.get_instance_transform(index)
+		
 		collision_shape.shape = multimesh.mesh.create_trimesh_shape()
 		
 		collision_shape.transform.basis.x = mesh_tran.basis.x

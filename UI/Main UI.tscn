@@ -66,8 +66,6 @@ size = Vector2( 10, 1 )
 script = ExtResource( 15 )
 protoset = SubResource( 6 )
 prototype_id = "axe"
-properties = {
-}
 
 [node name="Tab UI" type="MarginContainer" parent="."]
 visible = false

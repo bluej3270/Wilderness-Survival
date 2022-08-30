@@ -5,6 +5,7 @@
         "height": 1,
         "image": "res://Inventory/Icons/can_of_beans.png",
 		"path": "res://Items/Fancy Axe.tscn",
-        "properties": [100, 20]
+        "properties": [100, 20],
+        "transform": [[-0.066, 0.003, -0.008], [0.008, -0.002, -0.066], [-0.003, -0.067, 0.002], [0, 0.076, 0]]
     }
 ]
