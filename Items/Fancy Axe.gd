@@ -16,7 +16,6 @@ func setup(p):
 	power = properties[1]
 
 func _process(delta):
-	print(properties)
 	if raycast.is_colliding() and Input.is_action_just_pressed("lclick"):
 		if raycast.get_collider().is_in_group("tree"):
 			pass #run the tree chopping mini-game

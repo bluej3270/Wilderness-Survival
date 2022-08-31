@@ -93,22 +93,25 @@ func hotbar_manager():
 		
 		#_select item on ctrlGridInventory 
 		$HUD/VBoxContainer/Bottom/HBoxContainer/CtrlInventoryGrid._select(selected_item)
+		
+		if selected_item:
+			
 
-		#instance item
-		selected_item_instance = load(selected_item.get_property("path")).instance()
-		
-		#feed properties to item
-		properties = selected_item.get_property("properties")
-		selected_item_instance.setup(properties)
-		
-		#apply transforms. 
-		var transform_prop = selected_item.get_property("transform")
-		var t = Transform(Vector3(transform_prop[0][0], transform_prop[0][1], transform_prop[0][2]), Vector3(transform_prop[1][0], transform_prop[1][1], transform_prop[1][2]), Vector3(transform_prop[2][0], transform_prop[2][1], transform_prop[2][2]), Vector3(transform_prop[3][0], transform_prop[3][1], transform_prop[3][2]))
-		selected_item_instance.set_transform(t)
-		
-		#add to scene
-		if selected_item.get_property("location"): #if selected_item.get_property("location") returns a path, put the thing there. Otherwise, it should return null
-			pass #put the instance at the bone provided by selected_item.get_property("location")
-		else:
-			get_parent().get_parent().get_parent().get_righthand_bone().add_child(selected_item_instance) 
+			#instance item
+			selected_item_instance = load(selected_item.get_property("path")).instance()
+			
+			#feed properties to item
+			properties = selected_item.get_property("properties")
+			selected_item_instance.setup(properties)
+			
+			#apply transforms. 
+			var transform_prop = selected_item.get_property("transform")
+			var t = Transform(Vector3(transform_prop[0][0], transform_prop[0][1], transform_prop[0][2]), Vector3(transform_prop[1][0], transform_prop[1][1], transform_prop[1][2]), Vector3(transform_prop[2][0], transform_prop[2][1], transform_prop[2][2]), Vector3(transform_prop[3][0], transform_prop[3][1], transform_prop[3][2]))
+			selected_item_instance.set_transform(t)
+			
+			#add to scene
+			if selected_item.get_property("location"): #if selected_item.get_property("location") returns a path, put the thing there. Otherwise, it should return null
+				pass #put the instance at the bone provided by selected_item.get_property("location")
+			else:
+				get_parent().get_parent().get_parent().get_righthand_bone().add_child(selected_item_instance) 
 		
