@@ -88,3 +88,6 @@ func get_raycast():
 
 func get_righthand_bone():
 	return $Armature/rightHand
+
+func get_main_ui():
+	return $"Pivot/Camera/Main UI"

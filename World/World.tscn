@@ -100,6 +100,7 @@ script = ExtResource( 16 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
+material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }
@@ -112,6 +113,7 @@ shape = SubResource( 6 )
 
 [node name="River" type="MeshInstance" parent="."]
 mesh = ExtResource( 4 )
+material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }
@@ -124,6 +126,7 @@ shape = SubResource( 7 )
 
 [node name="Mountains" type="MeshInstance" parent="."]
 mesh = ExtResource( 5 )
+material/0 = null
 __meta__ = {
 "_edit_lock_": true
 }

@@ -173,7 +173,9 @@ script = ExtResource( 2 )
 [node name="Tier 2 Axe Handle" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.73162 )
 mesh = SubResource( 5 )
+material/0 = null
 
 [node name="Tier 2 Axe Head" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.73162 )
 mesh = SubResource( 6 )
+material/0 = null

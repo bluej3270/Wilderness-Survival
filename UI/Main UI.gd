@@ -8,6 +8,7 @@ var properties
 
 var tab_shown = false
 
+signal remove_hand_item
 
 func _process(delta):
 	hotbar_manager()
@@ -83,13 +84,16 @@ func hotbar_manager():
 	
 	if pos_switched:
 		pos_switched = false
+
+		#Remove the item cuttently in the hand
+		emit_signal("remove_hand_item")
 		
 		#get item at position
 		selected_item = $Tools.get_item_at(Vector2(pos, 0))
 		
 		#_select item on ctrlGridInventory 
 		$HUD/VBoxContainer/Bottom/HBoxContainer/CtrlInventoryGrid._select(selected_item)
-		
+
 		#instance item
 		selected_item_instance = load(selected_item.get_property("path")).instance()
 		

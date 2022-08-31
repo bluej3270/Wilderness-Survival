@@ -8,18 +8,25 @@ var raycast
 
 var properties
 
-func set_properties(p):
-	properties = p
-	print(properties)
+onready var player = get_parent().get_parent().get_parent()
 
+func setup(p):
+	properties = p
+	durability = properties[0]
+	power = properties[1]
 
 func _process(delta):
 	print(properties)
 	if raycast.is_colliding() and Input.is_action_just_pressed("lclick"):
 		if raycast.get_collider().is_in_group("tree"):
-			
-			durability = properties[0]
-			print(durability)
+			pass #run the tree chopping mini-game
 
 func _ready():
-	raycast = get_parent().get_parent().get_parent().get_raycast()
+	raycast = player.get_raycast()
+
+	#Remove self if the selected item changes
+	var main_ui = player.get_main_ui()
+	main_ui.connect("remove_hand_item", self, "_remove_item")
+
+func _remove_item():
+	self.queue_free()
