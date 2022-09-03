@@ -84,7 +84,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP, true)
 
 func get_raycast():
-	return $RayCast
+	return $Armature/RayCast
 
 func get_righthand_bone():
 	return $Armature/rightHand

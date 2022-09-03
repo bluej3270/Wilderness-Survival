@@ -815,11 +815,15 @@ anims/Run = SubResource( 10 )
 
 [node name="Cube" type="MeshInstance" parent="Armature"]
 mesh = SubResource( 11 )
-material/0 = null
 
 [node name="rightHand" type="BoneAttachment" parent="Armature"]
 transform = Transform( 0.0243834, -3.35276e-08, 0.999702, 0.999702, -1.38883e-07, -0.024383, 1.41561e-07, 0.999999, -5.96046e-08, -0.884214, 1.50645, 4.84288e-08 )
 bone_name = "Hand.R"
+
+[node name="RayCast" type="RayCast" parent="Armature"]
+transform = Transform( -0.666667, -5.95559e-11, 5.83095e-08, -4.0707e-11, 0.666667, 2.91038e-11, -5.82877e-08, -1.45519e-11, -0.666667, 0.000116691, 1.51891, -0.000108803 )
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
 
 [node name="Pivot" type="Spatial" parent="."]
 transform = Transform( 0.999999, 2.60171e-10, 1.30967e-10, -2.50234e-10, 0.999999, 2.18279e-10, -1.30967e-10, -2.03727e-10, 0.999999, -0.000256178, 1.1808, 0.000238862 )
@@ -833,8 +837,3 @@ current = true
 near = 1.0
 
 [node name="Main UI" parent="Pivot/Camera" instance=ExtResource( 3 )]
-
-[node name="RayCast" type="RayCast" parent="."]
-transform = Transform( 1, 5.64402e-11, 0, -3.19549e-11, 1, 0, 0, 2.91038e-11, 1, -0.000175036, 0.778358, 0.000163205 )
-enabled = true
-cast_to = Vector3( 0, 0, -25 )
