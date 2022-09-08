@@ -35,7 +35,7 @@ json_data = "[
         \"id\": \"axe\",
         \"width\": 1,
         \"height\": 1,
-        \"image\": \"res://Inventory/Icons/can_of_beans.png\",
+        \"image\": \"res://Assets/Images/axe_icon.png\",
 		\"path\": \"res://Items/Fancy Axe.tscn\",
         \"properties\": [100, 20],
         \"transform\": [[-0.066, 0.003, -0.008], [0.008, -0.002, -0.066], [-0.003, -0.067, 0.002], [0, 0.076, 0]]
@@ -67,8 +67,6 @@ size = Vector2( 10, 1 )
 script = ExtResource( 15 )
 protoset = SubResource( 6 )
 prototype_id = "axe"
-properties = {
-}
 
 [node name="Tab UI" type="MarginContainer" parent="."]
 visible = false
