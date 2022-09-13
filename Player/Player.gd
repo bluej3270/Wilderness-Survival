@@ -91,3 +91,6 @@ func get_righthand_bone():
 
 func get_main_ui():
 	return $"Pivot/Camera/Main UI"
+
+func get_camera():
+	return $Pivot/Camera
