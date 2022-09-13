@@ -96,7 +96,6 @@ func hotbar_manager():
 		
 		if selected_item:
 			
-
 			#instance item
 			selected_item_instance = load(selected_item.get_property("path")).instance()
 			
